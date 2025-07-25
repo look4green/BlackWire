@@ -11,6 +11,13 @@ XPT2046_Touchscreen ts(33, 34);
 #define BUZZER_PIN 27     // Connect buzzer here
 #define LED_PIN    2      // Onboard LED on many ESP32 boards
 
+#define TS_MINX 300
+#define TS_MAXX 3800
+#define TS_MINY 300
+#define TS_MAXY 3800
+#define DISPLAY_WIDTH 240
+#define DISPLAY_HEIGHT 320
+
 void setup() {
   Serial.begin(115200);
 
@@ -32,11 +39,12 @@ void setup() {
   pinMode(LED_PIN, OUTPUT);
 }
 
+
 void loop() {
   if (ts.touched()) {
     TS_Point p = ts.getPoint();
-    int x = map(p.x, TS_MINX, TS_MAXX, 0, 240);
-    int y = map(p.y, TS_MINY, TS_MAXY, 0, 320);
+    int x = map(p.x, TS_MINX, TS_MAXX, 0, DISPLAY_WIDTH);
+    int y = map(p.y, TS_MINY, TS_MAXY, 0, DISPLAY_HEIGHT);
 
     // Visual feedback
     tft.fillCircle(x, y, 5, TFT_RED);
