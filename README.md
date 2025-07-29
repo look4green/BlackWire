@@ -1,7 +1,7 @@
-# 🖥️ ESP32 + 2.8" TFT SPI Display (Bruce Firmware)
+# 🖥️ ESP32 + 2.8" TFT SPI Display (CYD Compatible)
 
 ## 📦 Project Summary
-This setup connects a standalone **2.8" ILI9341 SPI TFT LCD with Touch** to an **ESP32-WROOM-32U** module. It is designed for use with the **Bruce-TFTspi firmware**, optimized for graphic interfaces, touch, and SD card integration.
+This setup connects a standalone **2.8" ILI9341 SPI TFT LCD with Touch** to an **ESP32-WROOM-32U** module. It is designed for use with the **Any CYD2.8 firmware**, optimized for graphic interfaces, touch, and SD card integration.
 
 ---
 
@@ -46,17 +46,14 @@ This setup connects a standalone **2.8" ILI9341 SPI TFT LCD with Touch** to an *
 ---
 
 ## 🚀 Firmware
-- **Bruce-TFTspi**  
-  [GitHub Repo](https://github.com/CyberDuckyiq/Bruce-TFTspi)  
-  [Web Flasher](https://bruce.computer/flasher)
 
-Compatible with both 2.4" and 2.8" ILI9341-based displays. Configuration is hardcoded for Bruce so no extra setup needed if wiring matches.
+Compatible with both 2.4" and 2.8" ILI9341-based displays. Configuration is hardcoded for CYD 2.4 / CYD 2.8 so no extra setup needed if wiring matches.
 
 ---
 
 ## 🛠️ Flashing Instructions
 1. Connect ESP32 to your PC via USB.
-2. Open [Bruce Web Flasher](https://bruce.computer/flasher).
+2. Open [Any Web Flasher](https://anything).
 3. Select `TFT SPI` variant.
 4. Flash firmware (no config file needed).
 5. Insert SD card (FAT32) with interface assets (if applicable).
