@@ -1,10 +1,10 @@
 #define BUILD_VERSION "BlackWire"
 #define BACKLIGHT_TIMEOUT 60000  // 60 seconds
-//#include <ArduinoFFT.h>
+//#include <arduinoFFT.h>
 #include <Arduino.h>
 #include <TFT_eSPI.h>
 #include <Wire.h>
-#include <PCF8574.h>
+//#include <PCF8574.h>
 #include "config.h"
 #include "Touchscreen.h"
 #include "wificonfig.h"
