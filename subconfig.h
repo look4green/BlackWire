@@ -5,7 +5,7 @@
 #include "arduinoFFT.h"
 #include <TFT_eSPI.h> 
 
-#include <ELECHOUSE_CC1101_ESP32DIV.h>
+#include <ELECHOUSE_CC1101.h>
 
 #include <RCSwitch.h>
 #include <EEPROM.h>
