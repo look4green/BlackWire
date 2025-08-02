@@ -1,15 +1,14 @@
 # 🖥️ ESP32 + 2.8" TFT SPI Display (CYD Compatible)
 
 ## 📦 Project Summary
-This setup connects a standalone **2.8" ILI9341 SPI TFT LCD with Touch** to an **ESP32-WROOM-32U** module. It is designed for use with the **Any CYD2.8 firmware**, optimized for graphic interfaces, touch, and SD card integration.
+This setup connects a standalone **2.8" ILI9341 SPI TFT LCD with Touch** to an **ESP32-WROOM-32U** module. optimized for graphic interfaces, touch, and SD card integration.
 
 ---
 
 ## 🧰 Hardware Components
 - ESP32-WROOM-32U (separate module)
 - 2.8" ILI9341 SPI TFT Display (with touch)
-- Optional: SD Card module (SPI-based)
-- Power supply: 3.3V (recommended)
+- SD Card module (SPI-based)
 
 ---
 
@@ -18,53 +17,30 @@ This setup connects a standalone **2.8" ILI9341 SPI TFT LCD with Touch** to an *
 ### 📺 TFT Display
 | Signal   | GPIO | Notes                      |
 |----------|------|----------------------------|
-| MISO     | 12   | TFT_SDO                    |
-| MOSI     | 13   | TFT_SDI                    |
-| SCLK     | 14   | TFT_SCK                    |
-| CS       | 15   | TFT_CS                     |
-| DC       | 2    | TFT_DC                     |
-| RESET    | EN   | Connected to board EN pin  |
-| LED      | 21   | Backlight (HIGH = ON)      |
+| MISO     | 19   | TFT_SDO                    |
+| MOSI     | 23   | TFT_SDI                    |
+| SCLK     | 18   | TFT_SCK                    |
+| CS       | 17   | TFT_CS                     |
+| DC       | 16   | TFT_DC                     |
+| RESET    | 5    | Connected to pin           |
+| LED      | 32   | Backlight (HIGH = ON)      |
 
 ### 🖱️ Touch Controller (XPT2046 or similar)
 | Signal   | GPIO | Notes                      |
 |----------|------|----------------------------|
-| T-IRQ    | 36   | VP – Interrupt pin         |
-| T-D0     | 39   | VN – Touch data out        |
-| T-DIN    | 32   | Data input                 |
-| T-CS     | 33   | Chip select                |
-| T-CLK    | 25   | Clock                      |
+| T-IRQ    | 0    | VP – Interrupt pin         |
+| T-D0     | 19   | VN – Touch data out        |
+| T-DIN    | 23   | Data input                 |
+| T-CS     | 21   | Chip select                |
+| T-CLK    | 18   | Clock                      |
 
 ### 💾 SD Card (SPI interface)
 | Signal   | GPIO |
 |----------|------|
-| CS       | 5    |
+| CS       | 12   |
 | MOSI     | 23   |
 | MISO     | 19   |
 | SCK      | 18   |
-
----
-
-## 🚀 Firmware
-
-Compatible with both 2.4" and 2.8" ILI9341-based displays. Configuration is hardcoded for CYD 2.4 / CYD 2.8 so no extra setup needed if wiring matches.
-
----
-
-## 🛠️ Flashing Instructions
-1. Connect ESP32 to your PC via USB.
-2. Open [Any Web Flasher](https://anything).
-3. Select `TFT SPI` variant.
-4. Flash firmware (no config file needed).
-5. Insert SD card (FAT32) with interface assets (if applicable).
-6. Power up and enjoy!
-
----
-
-## 🧪 Tips
-- Confirm voltage levels: 3.3V only.
-- Use short SPI wires to avoid signal loss.
-- Check controller chip marking to validate touch type.
 
 ---
 
